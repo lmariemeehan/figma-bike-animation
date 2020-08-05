@@ -8,9 +8,20 @@ body {
     text-align: center;
 }
 
-#right-wheel {
-    animation: wheel 1s ease;
+#right-wheel, #left-wheel {
+    animation: wheel 1s infinite linear;
     transform-origin: center;
+    transform-box: fill-box;
+}
+
+#man-bike {
+    animation: bike 1s ease-in-out infinite alternate;
+    transform-origin: bottom;
+}
+
+#hat {
+    animation: hat 1s ease-in-out infinite alternate;
+    transform-origin: top;
     transform-box: fill-box;
 }
 
@@ -20,5 +31,23 @@ body {
     }
     to {
         transform: rotateZ(360deg);
+    }
+}
+
+@keyframes bike {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(20deg);
+    }
+}
+
+@keyframes hat {
+    from {
+        transform: translateY(0%) rotateX(0deg);
+    }
+    to {
+        transform: translateY(40%) rotate(5deg);
     }
 }
